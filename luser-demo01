@@ -1,0 +1,31 @@
+#!/bin/bash
+# This Script displays various information to the screen
+# Display "Hello"
+echo "hello"
+# Assign a value to a Variable
+WORD='script'
+#Display the Value of the variable "WORD"
+echo "This is the Value of the WORD : $WORD"
+#No Extention of Variable with ''
+echo 'This is the Value of the WORD : $WORD'
+#Another way of displaying the contect of the variable
+echo "This is the content with the {} : ${WORD}"
+# Declaring a new Variable to reiterate
+NEW_WORD="ed"
+echo "This Output is ${WORD}${NEW_WORD}"
+NEW_WORD="ing"
+echo "${WORD}${NEW_WORD} is fun."
+# Display the UID of a User
+echo "Your UID is ${UID}"
+# Display your User id
+echo "Your Username is $(id -un)"
+# Display todays date and time
+echo "Today date is $(date) and time is $(sudo clock)"
+USERNAME=`id -un`
+echo "Tick USERNAME is ${USERNAME}"
+if [ "${UID}" -eq 0 ]
+then
+  echo "Inside If Clause : You are Root"
+else
+  echo "Inside If Clause : You dont have Privilages, as you are not Root. Your UID is : ${UID}"
+fi
